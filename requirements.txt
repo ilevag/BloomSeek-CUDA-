@@ -1,0 +1,20 @@
+# Key Generator with CUDA Acceleration Version: 0.8 (BTC/ETH/SOL) — требования окружения
+
+## Инструменты сборки
+- CMake 3.18+  
+- Visual Studio 2022 / MSVC Build Tools с поддержкой C++17 и OpenMP  
+- NVIDIA CUDA Toolkit 11.5+ (nvcc, curand), GPU с архитектурой SM 86/89 и актуальный драйвер
+
+## Сторонние библиотеки
+- OpenSSL (Win64) 3.x — нужны `libssl-3-x64.dll` и `libcrypto-3-x64.dll`  
+  (поддерживается fallback на 1.1.x: `libssl-1_1-x64.dll`, `libcrypto-1_1-x64.dll`)
+- SQLite3 — заголовки и библиотека (`sqlite3.h`, `sqlite3.lib`/`sqlite3.dll`); можно установить через vcpkg `sqlite3`
+
+## Рантайм-файлы в корне проекта
+- `cudart64_65.dll` (или версия из установленного CUDA Toolkit)
+- `sqlite3.dll`
+- файлы OpenSSL из пункта выше
+
+## Дополнительно
+- Python 3.9+ для вспомогательных скриптов (`btc_db_verifier.py`, `_tmp_inspect.py`, `tmp_schema.py`); используют только стандартную библиотеку, `pip`-зависимостей нет
+

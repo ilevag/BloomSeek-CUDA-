@@ -1,0 +1,6 @@
+[submodule "eth-vanity-cuda"]
+	path = third_party/eth-vanity-cuda
+	url = https://github.com/manuelinfosec/eth-vanity-cuda.git
+[submodule "solanity"]
+	path = third_party/solanity
+	url = https://github.com/mcf-rocks/solanity

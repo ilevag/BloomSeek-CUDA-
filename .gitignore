@@ -1,0 +1,86 @@
+# Build directories
+build/
+cmake-build-*/
+out/
+compile_commands.json
+
+# Visual Studio
+.vs/
+*.obj
+*.idb
+*.ipch
+*.tlog
+*.lastbuildstate
+*.VC.db
+*.VC.opendb
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Compiled binaries
+*.exe
+*.dll
+!sqlite3.dll
+!cudart64_65.dll
+*.exp
+*.lib
+*.pdb
+*.ilk
+
+# App/runtime config
+config.ini
+
+# Databases (large files)
+databases/
+databases/*.db
+databases/*.sqlite
+databases/*.sqlite3
+
+# Bloom filters (large files)
+bloom_external_btc/*.bf
+bloom_external_eth/*.bf
+bloom_filters/
+bloom_external_btc/
+bloom_external_eth/
+bloom_filters/*.bf
+
+# Logs
+*.log
+bitcoin_generator.log
+solana_generator.log
+
+# Results
+matches_*.txt
+generated_keys.txt
+btc_db_verification_results.txt
+eth_verification_results.txt
+*_verification_results.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+venv/
+env/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+

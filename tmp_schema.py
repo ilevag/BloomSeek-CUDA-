@@ -1,0 +1,11 @@
+import sqlite3, json, pathlib
+p = pathlib.Path('databases/p2pkh_addresses.db')
+con = sqlite3.connect(p)
+cur = con.cursor()
+cur.execute("SELECT name, sql FROM sqlite_master WHERE type='table'")
+print(json.dumps(cur.fetchall(), ensure_ascii=False, indent=2))
+cur.execute('PRAGMA table_info(addresses)')
+print('table_info:', json.dumps(cur.fetchall(), ensure_ascii=False, indent=2))
+cur.execute('SELECT COUNT(*) FROM addresses')
+print('count:', cur.fetchone()[0])
+con.close()
