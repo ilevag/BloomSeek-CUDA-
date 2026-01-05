@@ -98,7 +98,7 @@ target_link_libraries(${PROJECT_NAME}
 
 # Ensure stdint.h path in solanity fixedint.h under MSVC + nvcc
 target_compile_definitions(${PROJECT_NAME} PRIVATE
-    $<$<COMPILE_LANGUAGE:CUDA>:__STDC__=1 __STDC_VERSION__=199901L>
+    $<$<OR:$<COMPILE_LANGUAGE:CUDA>,$<COMPILE_LANGUAGE:CXX>>:__STDC__=1 __STDC_VERSION__=199901L>
 )
 
 # Опции компиляции CUDA
