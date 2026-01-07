@@ -66,6 +66,17 @@ python btc_db_verifier.py --input matches_btc_20b.txt --db databases/p2pkh_addre
 python _tmp_inspect.py databases/eth_addresses.db
 ```
 
+DBs details
+-----------------
+BTC - 602 mln lines (BLOB HASH160 P2PKH)
+Link (https://disk.yandex.ru/d/L0V7saw_NPo4IQ)
+ETH - 252 mln lines (BLOB)
+Link (https://disk.yandex.ru/d/kd4HYxmsWWooTQ)
+SOL - 126 mln lines (BLOB)
+Link (https://disk.yandex.ru/d/nrELoQvJlJsBpw)
+
+For DBs were parsed all addresses, that had at least 1 transaction till july 2025)
+
 Performance Notes
 -----------------
 - Lower FPR (e.g., 1e-9) increases Bloom filter size; multi-GB filters will consume significant VRAM/host RAM.
@@ -75,3 +86,4 @@ Safety / Disclaimer
 -------------------
 Do not run on real private keys or sensitive data you cannot risk. The software is provided as-is; you are responsible for complying with local laws and third-party licenses.
 # BloomSeek-CUDA-
+
