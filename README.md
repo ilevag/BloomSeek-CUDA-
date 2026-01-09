@@ -75,7 +75,7 @@ Link (https://disk.yandex.ru/d/kd4HYxmsWWooTQ)
 - SOL - 126 mln lines (BLOB)
 Link (https://disk.yandex.ru/d/nrELoQvJlJsBpw)
 
-For DBs were parsed all addresses, that had at least 1 transaction till july 2025)
+The databases contain all addresses with at least one transaction up to July 2025.
 
 Performance Notes
 -----------------
