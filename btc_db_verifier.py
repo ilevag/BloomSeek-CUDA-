@@ -647,7 +647,7 @@ Input file format: matches_btc_20b.txt (TSV)
 
         if not_found:
             print(f"\nWARNING: {len(not_found)} addresses not found in database!")
-            print("This may indicate a problem with the Bloom filter or database.")
+            print("This behavior is usually normal, as the probability of finding a match is extremely low. Keep going, and ensure that your Bloom filter’s FPR gets maximum of the available VRAM.")
 
     except KeyboardInterrupt:
         print("\n\nProcess interrupted by user")

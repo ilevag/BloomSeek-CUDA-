@@ -2010,44 +2010,44 @@ int main(int argc, char* argv[]) {
 
     if (net == NetworkChoice::BTC) {
         std::cout << "\nBitcoin modes:" << std::endl;
-        std::cout << "5. Create Bloom filter for external SQLite BTC DB HASH160 (P2PKH/P2SH, 20 bytes)" << std::endl;
-        std::cout << "6. GPU scan vs BTC Bloom filter in VRAM (P2PKH/P2SH)" << std::endl;
-        std::cout << "7. Validate found addresses (Bloom result + key/address consistency check + DB lookup)" << std::endl;
-        std::cout << "Select mode (5-7): ";
-        int choice = 5;
-        if (!(std::cin >> choice)) { std::cin.clear(); choice = 5; std::cout << "5" << std::endl; }
+        std::cout << "1. Create Bloom filter for external SQLite BTC DB HASH160 (P2PKH/P2SH, 20 bytes)" << std::endl;
+        std::cout << "2. GPU scan vs BTC Bloom filter in VRAM (P2PKH/P2SH)" << std::endl;
+        std::cout << "3. Validate found addresses (Bloom result + key/address consistency check + DB lookup)" << std::endl;
+        std::cout << "Select mode (1-3): ";
+        int choice = 1;
+        if (!(std::cin >> choice)) { std::cin.clear(); choice = 1; std::cout << "1" << std::endl; }
         switch (choice) {
-            case 5: success = run_btc_external_bloom_mode(config); break;
-            case 6: success = run_btc_gpu_scan_mode(config); break;
-            case 7: success = run_btc_validate_results_mode(); break;
+            case 1: success = run_btc_external_bloom_mode(config); break;
+            case 2: success = run_btc_gpu_scan_mode(config); break;
+            case 3: success = run_btc_validate_results_mode(); break;
             default: std::cout << "Invalid choice!" << std::endl; success = false; break;
         }
     } else if (net == NetworkChoice::ETH) {
         std::cout << "\nEthereum modes:" << std::endl;
-        std::cout << "8. Create Bloom filter for external SQLite ETH DB (20 bytes)" << std::endl;
-        std::cout << "9. GPU scan vs ETH Bloom filter in VRAM" << std::endl;
-        std::cout << "10. Validate found ETH addresses (Bloom + recompute)" << std::endl;
-        std::cout << "Select mode (8-10): ";
-        int choice = 8;
-        if (!(std::cin >> choice)) { std::cin.clear(); choice = 8; std::cout << "8" << std::endl; }
+        std::cout << "1. Create Bloom filter for external SQLite ETH DB (20 bytes)" << std::endl;
+        std::cout << "2. GPU scan vs ETH Bloom filter in VRAM" << std::endl;
+        std::cout << "3. Validate found ETH addresses (Bloom + recompute)" << std::endl;
+        std::cout << "Select mode (1-3): ";
+        int choice = 1;
+        if (!(std::cin >> choice)) { std::cin.clear(); choice = 1; std::cout << "1" << std::endl; }
         switch (choice) {
-            case 8: success = run_eth_external_bloom_mode(config); break;
-            case 9: success = run_eth_gpu_scan_mode(config); break;
-            case 10: success = run_eth_validate_results_mode(); break;
+            case 1: success = run_eth_external_bloom_mode(config); break;
+            case 2: success = run_eth_gpu_scan_mode(config); break;
+            case 3: success = run_eth_validate_results_mode(); break;
             default: std::cout << "Invalid choice!" << std::endl; success = false; break;
         }
     } else if (net == NetworkChoice::SOL) {
         std::cout << "\nSolana modes:" << std::endl;
-        std::cout << "11. Create Bloom filter for external SQLite SOL DB (32 bytes)" << std::endl;
-        std::cout << "12. GPU/CPU scan vs SOL Bloom filter in VRAM" << std::endl;
-        std::cout << "13. Validate found SOL addresses (Bloom + recompute)" << std::endl;
-        std::cout << "Select mode (11-13): ";
-        int choice = 11;
-        if (!(std::cin >> choice)) { std::cin.clear(); choice = 11; std::cout << "11" << std::endl; }
+        std::cout << "1. Create Bloom filter for external SQLite SOL DB (32 bytes)" << std::endl;
+        std::cout << "2. GPU/CPU scan vs SOL Bloom filter in VRAM" << std::endl;
+        std::cout << "3. Validate found SOL addresses (Bloom + recompute)" << std::endl;
+        std::cout << "Select mode (1-3): ";
+        int choice = 1;
+        if (!(std::cin >> choice)) { std::cin.clear(); choice = 1; std::cout << "1" << std::endl; }
         switch (choice) {
-            case 11: success = run_sol_external_bloom_mode(config); break;
-            case 12: success = run_sol_gpu_scan_mode(config); break;
-            case 13: success = run_sol_validate_results_mode(); break;
+            case 1: success = run_sol_external_bloom_mode(config); break;
+            case 2: success = run_sol_gpu_scan_mode(config); break;
+            case 3: success = run_sol_validate_results_mode(); break;
             default: std::cout << "Invalid choice!" << std::endl; success = false; break;
         }
     }
