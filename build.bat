@@ -4,7 +4,7 @@ REM =================================
 
 echo.
 echo ============================================
-echo    Bitcoin Generator - Build Script
+echo    BloomSeek - Build Script
 echo ============================================
 echo.
 
@@ -57,9 +57,9 @@ if %ERRORLEVEL% NEQ 0 (
 
 echo.
 echo [4/4] Copying files...
-copy Release\BitcoinGenerator.exe ..\ >nul 2>&1
-if exist Release\BitcoinGenerator.exp copy Release\BitcoinGenerator.exp ..\ >nul 2>&1
-if exist Release\BitcoinGenerator.lib copy Release\BitcoinGenerator.lib ..\ >nul 2>&1
+copy Release\BloomSeek.exe ..\ >nul 2>&1
+if exist Release\BloomSeek.exp copy Release\BloomSeek.exp ..\ >nul 2>&1
+if exist Release\BloomSeek.lib copy Release\BloomSeek.lib ..\ >nul 2>&1
 
 cd ..
 
@@ -68,12 +68,12 @@ echo ============================================
 echo    BUILD SUCCESSFUL!
 echo ============================================
 echo.
-echo Executable: BitcoinGenerator.exe
+echo Executable: BloomSeek.exe
 echo.
 echo To run the program:
 echo   run.bat
 echo   or
-echo   .\BitcoinGenerator.exe
+echo   .\BloomSeek.exe
 echo.
 
 pause

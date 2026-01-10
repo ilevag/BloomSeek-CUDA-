@@ -778,18 +778,12 @@ bool run_btc_gpu_scan_mode(ConfigManager& config) {
         // Progress report every minute
         auto now = std::chrono::steady_clock::now();
         auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - report_last_time).count();
-        // Report more frequently for ETH (10s) to mirror BTC-style stats but more responsive
-        if (elapsed >= 10) {
+        if (elapsed >= 60) {
             size_t delta_checked = total_checked - checked_at_last_report;
-            size_t delta_matched = total_matched - matched_at_last_report;
             double per_sec_1m = elapsed > 0 ? (double)delta_checked / (double)elapsed : 0.0;
-            double fpr_1m = delta_checked ? (double)delta_matched / (double)delta_checked : 0.0;
-            double fpr_total = total_checked ? (double)total_matched / (double)total_checked : 0.0;
             
             std::cout << "[1m] speed=" << std::fixed << std::setprecision(0) << per_sec_1m << " keys/s, "
-                      << "checked=" << total_checked << ", matched=" << total_matched
-                      << ", fpr_1m=" << std::setprecision(6) << fpr_1m
-                      << ", fpr_total=" << std::setprecision(6) << fpr_total;
+                      << "checked=" << total_checked << ", matched=" << total_matched;
             
             // Enhanced GPU monitoring
             unsigned int gu=0, mu=0;
@@ -1514,15 +1508,10 @@ bool run_eth_gpu_scan_mode(ConfigManager& config) {
         auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(now - report_last_time).count();
         if (elapsed >= 60) {
             size_t delta_checked = total_checked - checked_at_last_report;
-            size_t delta_matched = total_matched - matched_at_last_report;
             double per_sec_1m = elapsed > 0 ? (double)delta_checked / (double)elapsed : 0.0;
-            double fpr_1m = delta_checked ? (double)delta_matched / (double)delta_checked : 0.0;
-            double fpr_total = total_checked ? (double)total_matched / (double)total_checked : 0.0;
 
             std::cout << "[ETH] speed=" << std::fixed << std::setprecision(0) << per_sec_1m << " keys/s, "
-                      << "checked=" << total_checked << ", matched=" << total_matched
-                      << ", fpr_1m=" << std::setprecision(6) << fpr_1m
-                      << ", fpr_total=" << std::setprecision(6) << fpr_total;
+                      << "checked=" << total_checked << ", matched=" << total_matched;
 
             unsigned int gpu_util = 0, mem_util = 0;
             unsigned long long mem_used_mb = 0, mem_total_mb = 0;
@@ -1883,7 +1872,7 @@ enum class NetworkChoice {
 
 int main(int argc, char* argv[]) {
     std::cout << "=== BloomSeek with CUDA Acceleration ===" << std::endl;
-    std::cout << "GPU BloomSeek v0.8" << std::endl;
+    std::cout << "GPU BloomSeek v0.8 (ilevag github.com/ilevag/BloomSeek-CUDA-)" << std::endl;
     std::cout << "========================================================" << std::endl << std::endl;
     
     // Set up signal handlers

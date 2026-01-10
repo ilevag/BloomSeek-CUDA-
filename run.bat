@@ -4,13 +4,13 @@ REM =========================================
 
 echo.
 echo ============================================
-echo    Bitcoin Generator - GPU Accelerated
+echo    BloomSeek - GPU Accelerated
 echo ============================================
 echo.
 
 REM Check if exe exists
-if not exist "BitcoinGenerator.exe" (
-    echo [ERROR] BitcoinGenerator.exe not found!
+if not exist "BloomSeek.exe" (
+    echo [ERROR] BloomSeek.exe not found!
     echo Please compile the project first or copy the exe here.
     pause
     exit /b 1
@@ -30,9 +30,9 @@ if not exist "cudart64_65.dll" (
 )
 
 REM Run the program
-echo Starting Bitcoin Generator...
+echo Starting BloomSeek...
 echo.
-BitcoinGenerator.exe
+BloomSeek.exe
 
 pause
 

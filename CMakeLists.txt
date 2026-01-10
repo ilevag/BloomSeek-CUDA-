@@ -80,6 +80,8 @@ include_directories(${CMAKE_SOURCE_DIR}/third_party/solanity/src/sgx-ecc-ed25519
 
 # Создать исполняемый файл
 add_executable(${PROJECT_NAME} ${SOURCES} ${CUDA_SOURCES})
+# Переименовать выходной бинарник
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "BloomSeek")
 
 if (CUDA_curand_LIBRARY)
     set(CURAND_LIB ${CUDA_curand_LIBRARY})
